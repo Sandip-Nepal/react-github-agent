@@ -1,0 +1,15 @@
+langchain-text-splitters
+langchain-openai
+python-dotenv
+langchain-chroma
+langchain-community
+azure-storage-blob
+azure-search-documents
+requests
+langchain
+pymupdf
+azure-ai-documentintelligence
+pydantic
+mcp
+langchain-mcp-adapters
+streamlit
