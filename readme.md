@@ -269,11 +269,10 @@ Show latest commits on main branch
 ## Knowledge Base
 
 ```text
-What does the employee handbook say about leave policy?
+How do we push to a new repository in github??
 
-Summarize the onboarding document.
+How to create a pull request?
 
-Find information about Azure Search architecture.
 ```
 
 ---
