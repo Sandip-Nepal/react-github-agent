@@ -106,12 +106,18 @@ app/
 │
 ├── agents/
 │   ├── github/
-│   │   └── github_agent.py
+│   │   ├── github_agent.py
+│   │   └── github_agent_prompt.py
 │   │
 │   ├── rag/
-│   │   └── rag_tools.py
+│   │   ├── rag_tools.py
+│   │   └── retriever.py
 │   │
+│   ├── search/
 │   └── memory.py
+│
+├── config/
+│   └── clients.py
 │
 ├── router/
 │   ├── classifier.py
@@ -121,13 +127,11 @@ app/
 ├── services/
 │   └── orchestrator.py
 │
-├── config/
-│   └── clients.py
+├── scripts/
+│   └── data_ingestion.py
 │
-├── ui/
-│   └── streamlit_app.py
-│
-└── main.py
+├── main.py
+└── streamlit_app.py
 ```
 
 ---
@@ -205,28 +209,46 @@ pip install -r requirements.txt
 Create a `.env` file.
 
 ```env
-GITHUB_TOKEN=your_github_token
-
-AZURE_OPENAI_ENDPOINT=
 AZURE_OPENAI_API_KEY=
-AZURE_OPENAI_DEPLOYMENT=
+AZURE_OPENAI_ENDPOINT=
+model_name=
+deployment=
+api_version=
+embedding=
 
 AZURE_SEARCH_ENDPOINT=
 AZURE_SEARCH_API_KEY=
-AZURE_SEARCH_INDEX=
+
+DI_ENDPOINT=
+DI_KEY=
+AZURE_STORAGE_CONNECTION_STRING=
+
+GITHUB_TOKEN=
 ```
+
+The repository also includes `.env.example` with the same variables.
 
 ---
 
 # Running the Application
 
-Start Streamlit:
+Start Streamlit from the repository root:
 
 ```bash
-streamlit run app/main.py
+streamlit run streamlit_app.py
 ```
 
-The application will launch in your browser.
+The application will launch in your browser at `http://localhost:8501`.
+
+---
+
+# Optional Local Test
+
+You can run the service entrypoint for local debugging:
+
+```bash
+python -m app.main
+```
 
 ---
 
@@ -257,6 +279,35 @@ Find information about Azure Search architecture.
 ---
 
 # Error Handling
+
+The application includes handling for:
+
+* Invalid GitHub repositories
+* Missing GitHub users
+* Authentication failures
+* MCP tool execution failures
+* Retrieval failures
+* LLM invocation errors
+
+---
+
+# Future Enhancements
+
+* LangGraph Supervisor Architecture
+* Search Agent Integration
+* Multi-Agent Collaboration
+* Human-in-the-Loop Workflows
+* Agent Observability
+* LangFuse Integration
+* RAG Evaluation using RAGAS
+* Azure AI Foundry Integration
+* Semantic Kernel Integration
+
+---
+
+# License
+
+This project is intended for educational, research, and enterprise AI experimentation purposes.
 
 The application includes error handling for:
 
