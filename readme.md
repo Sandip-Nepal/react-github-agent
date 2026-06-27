@@ -317,22 +317,3 @@ The application includes error handling for:
 * Retrieval failures
 * LLM invocation errors
 
----
-
-# Future Enhancements
-
-* LangGraph Supervisor Architecture
-* Search Agent Integration
-* Multi-Agent Collaboration
-* Human-in-the-Loop Workflows
-* Agent Observability
-* LangFuse Integration
-* RAG Evaluation using RAGAS
-* Azure AI Foundry Integration
-* Semantic Kernel Integration
-
----
-
-# License
-
-This project is intended for educational, research, and enterprise AI experimentation purposes.
